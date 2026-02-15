@@ -22,6 +22,7 @@ The challenge involves handling high-dimensional image data (12,288 features fro
 ## 📊 Dataset Description
 
 ### Overview
+
 - **Dataset Name**: 10 Monkey Species Image Classification Dataset
 - **Source**: https://www.kaggle.com/datasets/slothkong/10-monkey-species/data
 - **Total Classes**: 10 different monkey species
@@ -32,18 +33,18 @@ The challenge involves handling high-dimensional image data (12,288 features fro
 
 ### Class Distribution
 
-| Class ID | Latin Name | Common Name | Training Images | Validation Images |
-|----------|-----------|-------------|-----------------|-------------------|
-| n0 | *Alouatta palliata* | Mantled Howler | 131 | 26 |
-| n1 | *Erythrocebus patas* | Patas Monkey | 139 | 28 |
-| n2 | *Cacajao calvus* | Bald Uakari | 137 | 27 |
-| n3 | *Macaca fuscata* | Japanese Macaque | 152 | 30 |
-| n4 | *Cebuella pygmaea* | Pygmy Marmoset | 131 | 26 |
-| n5 | *Cebus capucinus* | White-headed Capuchin | 141 | 28 |
-| n6 | *Mico argentatus* | Silvery Marmoset | 132 | 26 |
-| n7 | *Saimiri sciureus* | Common Squirrel Monkey | 142 | 28 |
-| n8 | *Aotus nigriceps* | Black-headed Night Monkey | 133 | 27 |
-| n9 | *Trachypithecus johnii* | Nilgiri Langur | 132 | 26 |
+| Class ID | Latin Name              | Common Name               | Training Images | Validation Images |
+| -------- | ----------------------- | ------------------------- | --------------- | ----------------- |
+| n0       | _Alouatta palliata_     | Mantled Howler            | 131             | 26                |
+| n1       | _Erythrocebus patas_    | Patas Monkey              | 139             | 28                |
+| n2       | _Cacajao calvus_        | Bald Uakari               | 137             | 27                |
+| n3       | _Macaca fuscata_        | Japanese Macaque          | 152             | 30                |
+| n4       | _Cebuella pygmaea_      | Pygmy Marmoset            | 131             | 26                |
+| n5       | _Cebus capucinus_       | White-headed Capuchin     | 141             | 28                |
+| n6       | _Mico argentatus_       | Silvery Marmoset          | 132             | 26                |
+| n7       | _Saimiri sciureus_      | Common Squirrel Monkey    | 142             | 28                |
+| n8       | _Aotus nigriceps_       | Black-headed Night Monkey | 133             | 27                |
+| n9       | _Trachypithecus johnii_ | Nilgiri Langur            | 132             | 26                |
 
 ### Data Preprocessing
 
@@ -68,18 +69,19 @@ The challenge involves handling high-dimensional image data (12,288 features fro
 
 ### Comprehensive Model Comparison
 
-| ML Model Name | Accuracy | AUC Score | Precision | Recall | F1 Score | MCC Score |
-|---------------|----------|-----------|-----------|--------|----------|-----------|
-| **Logistic Regression** | 0.5735 | 0.8672 | 0.5777 | 0.5735 | 0.5660 | 0.5256 |
-| **Decision Tree** | 0.3971 | 0.6622 | 0.4058 | 0.3971 | 0.3910 | 0.3300 |
-| **K-Nearest Neighbor** | 0.5074 | 0.8186 | 0.5241 | 0.5074 | 0.5062 | 0.4527 |
-| **Gaussian Naive Bayes** | 0.3382 | 0.7584 | 0.3768 | 0.3382 | 0.3251 | 0.2660 |
-| **Random Forest (Ensemble)** | 0.5588 | 0.8705 | 0.5813 | 0.5588 | 0.5539 | 0.5280 |
-| **XGBoost (Ensemble)** | 0.5441 | 0.8930 | 0.5644 | 0.5441 | 0.5416 | 0.4939 |
+| ML Model Name                | Accuracy | AUC Score | Precision | Recall | F1 Score | MCC Score |
+| ---------------------------- | -------- | --------- | --------- | ------ | -------- | --------- |
+| **Logistic Regression**      | 0.5735   | 0.8672    | 0.5777    | 0.5735 | 0.5660   | 0.5256    |
+| **Decision Tree**            | 0.3971   | 0.6622    | 0.4058    | 0.3971 | 0.3910   | 0.3300    |
+| **K-Nearest Neighbor**       | 0.5074   | 0.8186    | 0.5241    | 0.5074 | 0.5062   | 0.4527    |
+| **Gaussian Naive Bayes**     | 0.3382   | 0.7584    | 0.3768    | 0.3382 | 0.3251   | 0.2660    |
+| **Random Forest (Ensemble)** | 0.5588   | 0.8705    | 0.5813    | 0.5588 | 0.5539   | 0.5280    |
+| **XGBoost (Ensemble)**       | 0.5441   | 0.8930    | 0.5644    | 0.5441 | 0.5416   | 0.4939    |
 
 ### Performance Highlights
 
 **Best Performers by Metric:**
+
 - **Accuracy**: Logistic Regression (57.35%)
 - **AUC Score**: XGBoost (89.30%)
 - **Precision**: Random Forest (58.13%)
@@ -93,16 +95,17 @@ The challenge involves handling high-dimensional image data (12,288 features fro
 
 ### 1. Logistic Regression
 
-| Metric | Score |
-|--------|-------|
-| Accuracy | 0.5735 |
+| Metric    | Score  |
+| --------- | ------ |
+| Accuracy  | 0.5735 |
 | AUC Score | 0.8672 |
 | Precision | 0.5777 |
-| Recall | 0.5735 |
-| F1 Score | 0.5660 |
+| Recall    | 0.5735 |
+| F1 Score  | 0.5660 |
 | MCC Score | 0.5256 |
 
 **Observations:**
+
 - ✅ **Best overall accuracy** (57.35%) and F1 score among all models
 - ✅ Demonstrates excellent balance between precision and recall
 - ✅ Strong AUC score (0.8672) indicates good class separation ability
@@ -115,16 +118,17 @@ The challenge involves handling high-dimensional image data (12,288 features fro
 
 ### 2. Decision Tree Classifier
 
-| Metric | Score |
-|--------|-------|
-| Accuracy | 0.3971 |
+| Metric    | Score  |
+| --------- | ------ |
+| Accuracy  | 0.3971 |
 | AUC Score | 0.6622 |
 | Precision | 0.4058 |
-| Recall | 0.3971 |
-| F1 Score | 0.3910 |
+| Recall    | 0.3971 |
+| F1 Score  | 0.3910 |
 | MCC Score | 0.3300 |
 
 **Observations:**
+
 - ❌ **Poorest performance** across nearly all metrics
 - ⚠️ High tendency to overfit with deep trees on high-dimensional data
 - ⚠️ Single tree cannot capture complex patterns in 12,288-dimensional space
@@ -137,16 +141,17 @@ The challenge involves handling high-dimensional image data (12,288 features fro
 
 ### 3. K-Nearest Neighbor Classifier
 
-| Metric | Score |
-|--------|-------|
-| Accuracy | 0.5074 |
+| Metric    | Score  |
+| --------- | ------ |
+| Accuracy  | 0.5074 |
 | AUC Score | 0.8186 |
 | Precision | 0.5241 |
-| Recall | 0.5074 |
-| F1 Score | 0.5062 |
+| Recall    | 0.5074 |
+| F1 Score  | 0.5062 |
 | MCC Score | 0.4527 |
 
 **Observations:**
+
 - ⚠️ **Moderate performance** placing in middle of the pack
 - ✅ Non-parametric approach effectively captures local patterns and similarities
 - ✅ Good AUC score (0.8186) shows reasonable discriminative ability
@@ -160,16 +165,17 @@ The challenge involves handling high-dimensional image data (12,288 features fro
 
 ### 4. Gaussian Naive Bayes Classifier
 
-| Metric | Score |
-|--------|-------|
-| Accuracy | 0.3382 |
+| Metric    | Score  |
+| --------- | ------ |
+| Accuracy  | 0.3382 |
 | AUC Score | 0.7584 |
 | Precision | 0.3768 |
-| Recall | 0.3382 |
-| F1 Score | 0.3251 |
+| Recall    | 0.3382 |
+| F1 Score  | 0.3251 |
 | MCC Score | 0.2660 |
 
 **Observations:**
+
 - ❌ **Second-worst performer** with lowest accuracy (33.82%)
 - ⚠️ Naive independence assumption severely violated by spatially correlated pixels
 - ⚠️ Gaussian distribution assumption doesn't hold well for pixel intensities
@@ -183,16 +189,17 @@ The challenge involves handling high-dimensional image data (12,288 features fro
 
 ### 5. Random Forest Classifier (Ensemble)
 
-| Metric | Score |
-|--------|-------|
-| Accuracy | 0.5588 |
+| Metric    | Score  |
+| --------- | ------ |
+| Accuracy  | 0.5588 |
 | AUC Score | 0.8705 |
 | Precision | 0.5813 |
-| Recall | 0.5588 |
-| F1 Score | 0.5539 |
+| Recall    | 0.5588 |
+| F1 Score  | 0.5539 |
 | MCC Score | 0.5280 |
 
 **Observations:**
+
 - 🏆 **Best precision** (58.13%) and **best MCC score** (52.80%)
 - ✅ Strong second-place accuracy, close behind Logistic Regression
 - ✅ Ensemble approach effectively reduces overfitting seen in single decision tree
@@ -207,16 +214,17 @@ The challenge involves handling high-dimensional image data (12,288 features fro
 
 ### 6. XGBoost Classifier (Ensemble)
 
-| Metric | Score |
-|--------|-------|
-| Accuracy | 0.5441 |
+| Metric    | Score  |
+| --------- | ------ |
+| Accuracy  | 0.5441 |
 | AUC Score | 0.8930 |
 | Precision | 0.5644 |
-| Recall | 0.5441 |
-| F1 Score | 0.5416 |
+| Recall    | 0.5441 |
+| F1 Score  | 0.5416 |
 | MCC Score | 0.4939 |
 
 **Observations:**
+
 - 🏆 **Highest AUC score** (89.30%) - best class separation and probability estimates
 - ✅ Advanced gradient boosting with built-in regularization
 - ✅ Handles complex patterns better than individual trees
@@ -393,14 +401,14 @@ feature_0,feature_1,feature_2,...,feature_12287,label
 
 ## 🎯 Performance Metrics Explained
 
-| Metric | Description | Interpretation |
-|--------|-------------|----------------|
-| **Accuracy** | Proportion of correct predictions | Higher is better (0-1) |
-| **AUC Score** | Area Under ROC Curve | Measures ranking quality (0-1) |
-| **Precision** | Ratio of true positives to predicted positives | Minimizes false alarms |
-| **Recall** | Ratio of true positives to actual positives | Minimizes missed cases |
-| **F1 Score** | Harmonic mean of precision and recall | Balanced performance metric |
-| **MCC Score** | Matthews Correlation Coefficient | Accounts for class imbalance (-1 to 1) |
+| Metric        | Description                                    | Interpretation                         |
+| ------------- | ---------------------------------------------- | -------------------------------------- |
+| **Accuracy**  | Proportion of correct predictions              | Higher is better (0-1)                 |
+| **AUC Score** | Area Under ROC Curve                           | Measures ranking quality (0-1)         |
+| **Precision** | Ratio of true positives to predicted positives | Minimizes false alarms                 |
+| **Recall**    | Ratio of true positives to actual positives    | Minimizes missed cases                 |
+| **F1 Score**  | Harmonic mean of precision and recall          | Balanced performance metric            |
+| **MCC Score** | Matthews Correlation Coefficient               | Accounts for class imbalance (-1 to 1) |
 
 ---
 
@@ -414,33 +422,6 @@ feature_0,feature_1,feature_2,...,feature_12287,label
 
 ---
 
-## 🔮 Future Enhancements
-
-- [ ] Implement CNN-based models (ResNet, EfficientNet)
-- [ ] Add transfer learning capabilities
-- [ ] Real-time image upload and prediction
-- [ ] Model explainability with LIME/SHAP
-- [ ] API endpoint for programmatic access
-- [ ] Mobile-responsive design improvements
-- [ ] Batch prediction support
-- [ ] Model retraining interface
-
----
-
-## 📄 License
-
-This project is created for educational purposes as part of a machine learning course assignment.
-
----
-
-## 👥 Author
-
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
-
----
-
 ## 🙏 Acknowledgments
 
 - Dataset: 10 Monkey Species Classification Dataset
@@ -449,16 +430,3 @@ This project is created for educational purposes as part of a machine learning c
 - Course instructors and teaching assistants
 
 ---
-
-## 📞 Support
-
-For issues, questions, or contributions:
-- Open an issue on GitHub
-- Submit a pull request
-- Contact via email
-
----
-
-**Last Updated**: February 2026
-
-**Version**: 1.0.0

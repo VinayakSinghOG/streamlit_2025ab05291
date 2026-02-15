@@ -55,7 +55,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Title
-st.markdown('<p class="main-header">🐵 Monkey Species Classification System</p>', unsafe_allow_html=True)
+st.markdown('<p class="main-header">Monkey Species Classification System</p>', unsafe_allow_html=True)
 st.markdown("---")
 
 # About section in the main area
@@ -141,7 +141,7 @@ CLASS_NAMES = [
 st.markdown("---")
 
 # Use tabs for better organization
-tab1, tab2, tab3 = st.tabs(["🏠 Project Overview", "📊 Model Performance", "🔮 Make Predictions"])
+tab1, tab2, tab3 = st.tabs(["Project Overview", "Model Performance", "Make Predictions"])
 
 # TAB 1: Project Overview
 with tab1:
@@ -151,14 +151,14 @@ with tab1:
     
     with col1:
         st.markdown("""
-        ### 📋 Problem Statement
+        ### Problem Statement
         
         The goal of this project is to develop a machine learning system capable of accurately 
         classifying images of monkeys into one of 10 different species. This multi-class 
         classification problem helps in wildlife monitoring, conservation efforts, and 
         educational purposes.
         
-        ### 📊 Dataset Description
+        ### Dataset Description
         
         **Dataset**: 10 Monkey Species Image Classification Dataset
         
@@ -180,7 +180,7 @@ with tab1:
         9. Black-headed Night Monkey (n8)
         10. Nilgiri Langur (n9)
         
-        ### 🎯 Project Objectives
+        ### Project Objectives
         
         1. Implement 6 different classification algorithms
         2. Compare performance using 6 evaluation metrics
@@ -189,12 +189,12 @@ with tab1:
         """)
     
     with col2:
-        st.markdown("### 📈 Quick Stats")
+        st.markdown("### Quick Stats")
         st.metric("Total Models", "6")
         st.metric("Best Accuracy", f"{max([v['Accuracy'] for v in MODEL_RESULTS.values()]):.2%}")
         st.metric("Best AUC Score", f"{max([v['AUC Score'] for v in MODEL_RESULTS.values()]):.4f}")
         
-        st.markdown("###Top Performers")
+        st.markdown("### Top Performers")
         
         # Find best model for each metric
         metrics = ['Accuracy', 'AUC Score', 'Precision', 'Recall', 'F1 Score', 'MCC Score']
@@ -207,7 +207,7 @@ with tab2:
     st.header("Model Performance Analysis")
     
     # Create comparison table
-    st.subheader("📋 Comprehensive Model Comparison")
+    st.subheader("Comprehensive Model Comparison")
     
     results_df = pd.DataFrame(MODEL_RESULTS).T
     results_df = results_df.round(4)
@@ -222,7 +222,7 @@ with tab2:
     # Download button for results
     csv = results_df.to_csv()
     st.download_button(
-        label="📥 Download Results as CSV",
+        label="Download Results as CSV",
         data=csv,
         file_name="model_comparison_results.csv",
         mime="text/csv"
@@ -231,7 +231,7 @@ with tab2:
     st.markdown("---")
     
     # Visualization
-    st.subheader("📊 Performance Visualization")
+    st.subheader("Performance Visualization")
     
     # Metric selector
     selected_metric = st.selectbox(
@@ -268,60 +268,60 @@ with tab2:
     st.markdown("---")
     
     # Model observations
-    st.subheader("🔍 Model Performance Observations")
+    st.subheader("Model Performance Observations")
     
     observations = {
         'Logistic Regression': """
         **Performance**: Strong baseline performer with highest accuracy (57.35%)
-        - ✅ Best accuracy and F1 score among all models
-        - ✅ Good balance between precision and recall
-        - ✅ Fast training time and low computational requirements
-        - ⚠️ Linear model struggles with complex non-linear patterns in images
+        - Best accuracy and F1 score among all models
+        - Good balance between precision and recall
+        - Fast training time and low computational requirements
+        - Linear model struggles with complex non-linear patterns in images
         - **Use Case**: Good for baseline comparisons and when interpretability is important
         """,
         
         'Decision Tree': """
         **Performance**: Lowest performer with accuracy of 39.71%
-        - ⚠️ Poorest performance across all metrics
-        - ⚠️ Prone to overfitting on image data
-        - ⚠️ Struggles with high-dimensional feature space (12,288 features)
-        - ✅ Fast prediction time once trained
+        - Poorest performance across all metrics
+        - Prone to overfitting on image data
+        - Struggles with high-dimensional feature space (12,288 features)
+        - Fast prediction time once trained
         - **Use Case**: Not recommended for this task; better suited for structured tabular data
         """,
         
         'K-Nearest Neighbor': """
         **Performance**: Moderate performer with accuracy of 50.74%
-        - ✅ Non-parametric approach captures local patterns
-        - ⚠️ Computationally expensive for predictions
-        - ⚠️ Sensitive to the curse of dimensionality with flattened images
-        - ⚠️ Requires storing entire training dataset
+        - Non-parametric approach captures local patterns
+        - Computationally expensive for predictions
+        - Sensitive to the curse of dimensionality with flattened images
+        - Requires storing entire training dataset
         - **Use Case**: Better with feature-engineered data or dimensionality reduction
         """,
         
         'Gaussian Naive Bayes': """
         **Performance**: Weakest performer with accuracy of 33.82%
-        - ⚠️ Strong independence assumption violated by pixel correlations
-        - ⚠️ Poorest accuracy and F1 score
-        - ✅ Decent AUC score (0.7584) suggests some discriminative ability
-        - ✅ Extremely fast training and prediction
+        - Strong independence assumption violated by pixel correlations
+        - Poorest accuracy and F1 score
+        - Decent AUC score (0.7584) suggests some discriminative ability
+        - Extremely fast training and prediction
         - **Use Case**: Not suitable for image classification with raw pixels
         """,
         
         'Random Forest': """
         **Performance**: Strong ensemble performer with accuracy of 55.88%
-        - ✅ Best precision (0.5813) and MCC score (0.5280)
-        - ✅ Robust to outliers and handles high-dimensional data well
-        - ✅ Reduces overfitting compared to single decision tree
-        - ⚠️ Computationally intensive and requires more memory
+        - Best precision (0.5813) and MCC score (0.5280)
+        - Robust to outliers and handles high-dimensional data well
+        - Reduces overfitting compared to single decision tree
+        - Computationally intensive and requires more memory
         - **Use Case**: Excellent for robust predictions when computational resources available
         """,
         
         'XGBoost': """
         **Performance**: Best AUC score (0.8930) with accuracy of 54.41%
-        - 🏆 Highest AUC score indicating best class separation
-        - ✅ Advanced boosting technique with regularization
-        - ✅ Handles complex patterns better than individual trees
-        - ⚠️ Slightly lower accuracy than Logistic Regression
+        - Highest AUC score indicating best class separation
+        - Advanced boosting technique with regularization
+        - Handles complex patterns better than individual trees
+        - Slightly lower accuracy than Logistic Regression
         - **Use Case**: Best for ranking and probability estimation; ideal when AUC is priority
         """
     }
@@ -358,7 +358,7 @@ with tab2:
     
     with col1:
         st.success("""
-        **✅ Best Overall Performance**
+        **Best Overall Performance**
         - **Logistic Regression**: Best for accuracy and F1 score
         - **XGBoost**: Best for AUC score and probability estimates
         - **Random Forest**: Best for precision and robustness
@@ -366,14 +366,14 @@ with tab2:
     
     with col2:
         st.warning("""
-        **⚠️ Limitations Identified**
+        **Limitations Identified**
         - Raw pixel features are suboptimal for complex images
         - All models show moderate accuracy (~34-57%)
         - Significant room for improvement with CNNs
         """)
     
     st.info("""
-    **💡 Recommendations for Improvement**
+    **Recommendations for Improvement**
     1. Use Convolutional Neural Networks (CNNs) for better feature extraction
     2. Apply transfer learning with pre-trained models (ResNet, VGG, EfficientNet)
     3. Implement data augmentation to increase training data diversity
@@ -385,11 +385,11 @@ with tab2:
 with tab3:
     st.header("Make Predictions with Trained Models")
     
-    st.info("📝 **Note**: Due to Streamlit Cloud free tier limitations, this demo uses pre-computed results. "
+    st.info("**Note**: Due to Streamlit Cloud free tier limitations, this demo uses pre-computed results. "
             "Upload your test data CSV file with extracted features to see predictions.")
     
     # Model selection
-    st.subheader("1️⃣ Select Model")
+    st.subheader("1. Select Model")
     selected_model = st.selectbox(
         "Choose a classification model",
         list(MODEL_RESULTS.keys()),
@@ -397,7 +397,7 @@ with tab3:
     )
     
     # Display selected model metrics
-    with st.expander("📊 View Selected Model Performance"):
+    with st.expander("View Selected Model Performance"):
         model_metrics = MODEL_RESULTS[selected_model]
         cols = st.columns(3)
         
@@ -416,7 +416,7 @@ with tab3:
     st.markdown("---")
     
     # File upload
-    st.subheader("2️⃣ Upload Image")
+    st.subheader("2. Upload Image")
     
     uploaded_file = st.file_uploader(
         "Upload a monkey image for classification",
@@ -429,7 +429,7 @@ with tab3:
             # Read and display the uploaded image
             image = Image.open(uploaded_file)
             
-            st.success(f"✅ Image uploaded successfully!")
+            st.success(f"Image uploaded successfully!")
             
             # Display image and info
             col1, col2 = st.columns([1, 1])
@@ -438,13 +438,13 @@ with tab3:
                 st.image(image, caption="Uploaded Image", width=300)
             
             with col2:
-                st.markdown("### 📸 Image Information")
+                st.markdown("### Image Information")
                 st.write(f"**Format**: {image.format}")
                 st.write(f"**Size**: {image.size[0]} x {image.size[1]} pixels")
                 st.write(f"**Mode**: {image.mode}")
                 
                 # Preprocess for model
-                st.markdown("### 🔧 Processing")
+                st.markdown("### Processing")
                 img_resized = image.resize((64, 64))
                 img_array = np.array(img_resized) / 255.0
                 img_flat = img_array.flatten()
@@ -454,17 +454,17 @@ with tab3:
             
             # Prediction button
             if True:  # Always show prediction option for images
-                st.subheader("3️⃣ Classify Image")
+                st.subheader("3. Classify Image")
                 
-                if st.button("🚀 Classify Species", type="primary"):
+                if st.button("Classify Species", type="primary"):
                     with st.spinner(f"Running {selected_model}..."):
                         # Simulate prediction (since we don't have actual trained models loaded)
                         # In production, you would load the actual model and make real predictions
                         
-                        st.info("ℹ️ This is a demonstration. In production, the actual trained model would classify the image.")
+                        st.info("This is a demonstration. In production, the actual trained model would classify the image.")
                         
                         # Simulate prediction results
-                        st.subheader("📊 Prediction Results")
+                        st.subheader("Prediction Results")
                         
                         # Generate probabilities for all classes
                         probabilities = np.random.dirichlet(np.ones(10) * 2)  # More realistic probability distribution
@@ -482,7 +482,7 @@ with tab3:
                         st.markdown("---")
                         
                         # Show all class probabilities
-                        st.subheader("🎯 Class Probabilities")
+                        st.subheader("Class Probabilities")
                         
                         prob_df = pd.DataFrame({
                             'Species': [name.replace('_', ' ').title() for name in CLASS_NAMES],
@@ -525,13 +525,13 @@ with tab3:
             
         
         except Exception as e:
-            st.error(f"❌ Error processing file: {str(e)}")
+            st.error(f"Error processing file: {str(e)}")
     
     else:
-        st.info("👆 Please upload an image to get started")
+        st.info("Please upload an image to get started")
         
         # Show instructions
-        with st.expander("📸 How to Use"):
+        with st.expander("How to Use"):
             st.markdown("""
             ### Upload Instructions
             
@@ -541,8 +541,8 @@ with tab3:
             4. View the predicted species and confidence scores
             
             ### Supported Image Formats
-            - ✅ JPG / JPEG
-            - ✅ PNG
+            - JPG / JPEG
+            - PNG
             
             ### Tips for Best Results
             - Use clear, well-lit images
@@ -567,8 +567,8 @@ with tab3:
     
     # Feature importance (for tree-based models)
     if selected_model in ['Decision Tree', 'Random Forest', 'XGBoost']:
-        st.subheader("🎯 Feature Importance")
-        st.info(f"📊 {selected_model} provides feature importance scores showing which features contribute most to predictions.")
+        st.subheader("Feature Importance")
+        st.info(f"{selected_model} provides feature importance scores showing which features contribute most to predictions.")
         
         if st.button("Show Feature Importance"):
             # Simulated feature importance
@@ -590,7 +590,7 @@ with tab3:
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: gray;'>
-    <p>🐵 Monkey Species Classification System | Built with Streamlit</p>
+    <p>Monkey Species Classification System | Built with Streamlit</p>
     <p>Implements: Logistic Regression • Decision Tree • KNN • Naive Bayes • Random Forest • XGBoost</p>
 </div>
 """, unsafe_allow_html=True)
