@@ -1,12 +1,12 @@
-# 🐵 Monkey Species Classification System
+# Monkey Species Classification System
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-app-url.streamlit.app)
+https://2025ab05291.streamlit.app
 
 A comprehensive machine learning system for classifying 10 different monkey species using 6 different classification algorithms with detailed performance analysis.
 
 ---
 
-## 📋 Problem Statement
+## Problem Statement
 
 The objective of this project is to develop and evaluate multiple machine learning models capable of accurately classifying images of monkeys into one of 10 distinct species. This multi-class image classification problem addresses challenges in:
 
@@ -19,7 +19,7 @@ The challenge involves handling high-dimensional image data (12,288 features fro
 
 ---
 
-## 📊 Dataset Description
+## Dataset Description
 
 ### Overview
 
@@ -65,7 +65,7 @@ The challenge involves handling high-dimensional image data (12,288 features fro
 
 ---
 
-## 🤖 Models Used
+## Models Used
 
 ### Comprehensive Model Comparison
 
@@ -91,7 +91,7 @@ The challenge involves handling high-dimensional image data (12,288 features fro
 
 ---
 
-## 🔍 Model Performance Observations
+## Model Performance Observations
 
 ### 1. Logistic Regression
 
@@ -237,7 +237,7 @@ The challenge involves handling high-dimensional image data (12,288 features fro
 
 ---
 
-## 📈 Overall Analysis
+## Overall Analysis
 
 ### Key Findings
 
